@@ -27,9 +27,39 @@ btn1.style.backgroundColor="yellow";
 
 var img=document.getElementsById("myImage");
 img.onmouseover=changeImage;
+img.onmouseout=changeImage2;
 
 function changeImage(e) {
 this.style.border="5px solid green";
-this.src="https://www.google.com/search?q=karate+png&tbm=isch&ved=2ahUKEwjQnseKjpDoAhXZSBUIHfOzC2IQ2-cCegQIABAA&oq=karate+png&gs_l=img.3..0i67j0l8.5323.6614..6818...0.0..0.123.407.2j2......0....1..gws-wiz-img.......35i39.9n0RJvmvIy0&ei=KKNnXtDqAtmR1fAP8-eukAY&bih=625&biw=1366&rlz=1C1CHBF_enIE862IE862#imgrc=NG-DSJc-SHxpZM";
+this.src="https://img.pngio.com/karate-png-free-download-karate-png-450_300.png";
+}
+function changeImage2(e) {
+this.style.border="none";
+this.src="https://i.etsystatic.com/17831127/r/il/ce9bd9/1887792183/il_570xN.1887792183_n5kx.jpg";
+}
 
+/*-------------------------------EVENT LISTENERS------------------------------------------*/
+var btn3 = document.getElementsById("btn_3");
+btn3.addEventListener("click", function(e){
+    btn3.style.backgroundColor="blue";
+    this.style.color="white";
+    img.style.border="5px dashed gray";
+});
+
+/*-------------------------------SELECT MULTIPLE ELEMENTS------------------------------------------*/
+function changeAllButtons(){
+    var mySelection, i;
+    mySelection=document.querySelectorAll("div.btn");
+    for (i=0; i<mySelection.length; i++){
+        mySelection[i].innerHTML="I changed";
+    }
+}
+/*-------------------------------ADD ELEMENT------------------------------------------*/
+document.getElementsById("btn_4").addEventListener("click", addText);
+function addText(){
+    var newEl=document.createElement("h2");
+    var newContent= document.createTextNode("This is a new heading!");
+    //shoe where to position content
+    newEl.appendChild(newContent);
+    output.appendChild(newEl);
 }
